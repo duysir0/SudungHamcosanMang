@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi: Chuỗi :thường>Hoa và ngược lại</title>
+</head>
+<body>
+<h1>Chuỗi: thường ->Hoa và Ngược lại</h1>
+<p>Chuỗi nhập:</p>
+<p id="promptStr"></p>
+<hr>
+<p>Chuỗi được thay đổi:</p>
+<p id="result"></p>
+</body>
+<script>
+    //Chuyển đổi chuỗi: từ chữ hoa thành chữ thường, và ngược lại
+
+    //Khai báo/Input: (vì bài này liên quan đến string, phải dùng split() để tạo mảng, mới làm việc được với phần tử
+    let strNhap = prompt(`Xin nhập chuỗi văn bản:`);
+    let strNhaptoArray = strNhap.split('')
+    let Ketqua = [];
+
+    //Toán đây
+    for (i = 0; i < strNhaptoArray.length; i++) {
+        if (strNhaptoArray[i] == strNhaptoArray[i].toUpperCase()) {
+            Ketqua += strNhaptoArray[i].toLowerCase();
+        }
+        else if (strNhaptoArray[i] == strNhaptoArray[i].toLowerCase()) {
+            Ketqua += strNhaptoArray[i].toUpperCase();
+        }
+    }
+
+    //Output
+    document.getElementById('result').innerHTML = Ketqua;
+    document.getElementById('promptStr').innerHTML = strNhap;
+
+</script>
