@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nhập số và thêm (-) giữa 2 số chẵn</title>
+</head>
+<body>
+<h1>Nhập số và thêm (-) giữa 2 số chẵn</h1>
+<hr>
+<p>Số đã nhập:</p>
+<p id="promptNum"></p>
+<p>Số đã thay đổi:</p>
+<p id="modifiedNum"></p>
+</body>
+
+<script>
+    //Khai báo/Input
+    dayNhap = prompt(`Hãy nhập dãy số (vd: 1234....)`);
+    dayRong = [];
+
+    //Điều kiện/Toán:
+for (i=0;i<dayNhap.length;i++)
+{
+    if(dayNhap[i]%2 == 0 && dayNhap[i+1]%2 == 0){
+        dayRong.push(dayNhap[i],'-')
+
+    }else {dayRong.push(dayNhap[i])}
+}
+    //Output
+document.getElementById('modifiedNum').innerHTML = dayRong.join('');
+document.getElementById('promptNum').innerHTML = dayNhap;
+
+
+
+
+</script>
+</html>
